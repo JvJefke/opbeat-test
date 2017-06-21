@@ -2,6 +2,7 @@ module.exports = {
 	state: {
 		test: false,
 		production: false,
+		docs: false,
 	},
 	server: {
 		cookies: {
