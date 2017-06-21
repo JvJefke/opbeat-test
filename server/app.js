@@ -8,8 +8,8 @@ require("server/helpers/environment");
 const app = require("express")();
 const config = require("config");
 
-// Init middleware
-require("./middleware")(app);
+// Init global middleware
+require("./middleware/global")(app);
 
 // Init routes
 require("./routes/")(app);
