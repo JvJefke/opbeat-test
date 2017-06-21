@@ -1,19 +1,20 @@
-const joi = require("joi");
+const Joi = require("joi");
 
-// Validate required environment variables like NODE_ENV
-const schema = joi.object({
-	NODE_ENV: joi.any()
-		.valid([
+module.exports = (env) => {
+	// Validate env
+	const schema = Joi.object().keys({
+		NODE_ENV: Joi.string().required().valid([
 			"local",
 			"development",
 			"test",
-		])
-		.required(),
-}).unknown()
-	.required();
+		]),
+	});
 
-const { error } = joi.validate(process.env, schema);
+	const { error } = Joi.validate(env, schema, {
+		allowUnknown: true,
+	});
 
-if (error) {
-	throw new Error(`Config validation error: ${error.message}`);
-}
+	if (error) {
+		throw new Error(`Config validation error: ${error.message}`);
+	}
+};
