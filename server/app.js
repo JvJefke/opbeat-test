@@ -21,3 +21,5 @@ app.use(require("./middleware/errorHandler"));
 app.listen(config.server.port, () => {
 	console.log(`Server listening at port ${config.server.port}, running in ${process.env.NODE_ENV} mode.`); // eslint-disable-line no-console
 });
+
+module.exports = exports = app;
