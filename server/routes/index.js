@@ -1,4 +1,5 @@
 require("rootpath")();
+const config = require("config");
 const glob = require("glob");
 
 const CoreController = require("server/controllers/core");
@@ -32,7 +33,7 @@ module.exports = (app) => {
 	 */
 	app.route("/status").get(CoreController.status);
 
-	if (process.env.NODE_ENV === "local") { // Only allow docs in local environment
+	if (config.state.docs) { // Only allow docs if configured
 		/**
 		 * @swagger
 		 * /docs:
