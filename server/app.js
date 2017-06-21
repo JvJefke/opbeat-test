@@ -2,25 +2,8 @@ require("rootpath")();
 
 // Set default environment to `local`
 process.env.NODE_ENV = process.env.NODE_ENV || "local";
-
-const joi = require("joi");
-// Validate NODE_ENV
-const schema = joi.object({
-	NODE_ENV: joi.any()
-		.valid([
-			"local",
-			"development",
-			"test",
-		])
-		.required(),
-}).unknown()
-	.required();
-
-const { error } = joi.validate(process.env, schema);
-
-if (error) {
-	throw new Error(`Config validation error: ${error.message}`);
-}
+// Check if environment is configured
+require("server/helpers/environment");
 
 const app = require("express")();
 const config = require("config");
