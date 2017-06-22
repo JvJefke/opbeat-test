@@ -42,7 +42,7 @@ module.exports = () => {
 	return new Promise((resolve, reject) => {
 		prettySwag.run(swaggerJSDoc(options), null, config, (err, data) => {
 			if (err) { // Something went wrong while creating the docs
-				reject(err);
+				reject(new Error("ERR_CREATING_DOCS"));
 			} else { // Everything is fine, send html
 				resolve(data);
 			}

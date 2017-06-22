@@ -4,6 +4,10 @@ const errorHandler = (err) => {
 
 	// Get the correct message
 	switch (err.message) {
+		case "ERR_CREATING_DOCS":
+			statusCode = 400;
+			msg = "Unable to create the docs.";
+			break;
 		case "MISSING_AUTHORIZATION":
 			statusCode = 401;
 			msg = "Not authorized.";
