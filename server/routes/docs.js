@@ -1,8 +1,7 @@
-require("rootpath")();
-const config = require("config");
+const config = require(process.env.PWD + "/config");
 
 const DocsMiddleware = require("../middleware/compileDocs");
-const DocsController = require("server/controllers/docs");
+const DocsController = require("../controllers/docs");
 
 module.exports = (app) => {
 	if (config.state.docs) { // Only allow docs if configured

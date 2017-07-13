@@ -1,6 +1,5 @@
-require("rootpath")();
 const expect = require("chai").expect;
-const compileDocs = require("server/middleware/compileDocs");
+const compileDocs = require(process.env.PWD + "/server/middleware/compileDocs");
 
 describe("Compile Swagger JSON middleware", () => {
 	it("Should pass swaggerData on the req object if succeeded", (done) => {

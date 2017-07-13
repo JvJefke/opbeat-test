@@ -1,8 +1,9 @@
-require("rootpath")();
 const glob = require("glob");
 
 module.exports = (app) => {
-	glob.sync("server/routes/!(index).js").forEach(route => {
+	glob.sync("./server/routes/!(index).js", {
+		absolute: true,
+	}).forEach(route => {
 		require(route)(app);
 	});
 

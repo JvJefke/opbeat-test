@@ -1,5 +1,4 @@
-require("rootpath")();
-const DocsHelper = require("server/helpers/docs");
+const DocsHelper = require("../../helpers/docs");
 
 module.exports = (req, res, next) => {
 	DocsHelper(req.swaggerData)

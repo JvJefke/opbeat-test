@@ -1,6 +1,4 @@
-require("rootpath")();
-
-const CoreController = require("server/controllers/core");
+const CoreController = require("../controllers/core");
 
 module.exports = (app) => {
 	/**

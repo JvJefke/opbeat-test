@@ -1,5 +1,5 @@
 const glob = require("glob");
-const packageJson = require("package.json");
+const packageJson = require(process.env.PWD + "/package.json");
 const swaggerJSDoc = require("swagger-jsdoc");
 
 const swaggerOptions = {

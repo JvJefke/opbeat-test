@@ -1,6 +1,5 @@
-require("rootpath")();
 const expect = require("chai").expect;
-const DocsHelper = require("server/helpers/docs");
+const DocsHelper = require(process.env.PWD + "/server/helpers/docs");
 
 describe("Docs helper", () => {
 	it("Should return an error because no Swagger JSON was given", function(done) {

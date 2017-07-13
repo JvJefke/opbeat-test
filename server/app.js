@@ -1,10 +1,8 @@
-require("rootpath")();
-
 // Check if environment is configured and valid
-require("server/helpers/environment")(process.env);
+require("./helpers/environment")(process.env);
 
 const app = require("express")();
-const config = require("config");
+const config = require(process.env.PWD + "/config");
 
 // Init global middleware
 require("./middleware/global")(app);

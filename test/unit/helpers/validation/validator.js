@@ -1,8 +1,7 @@
-require("rootpath")();
 const expect = require("chai").expect;
 const proxyquire = require("proxyquire");
 const Joi = require("Joi");
-const ValidationHelper = proxyquire("server/helpers/validation", {
+const ValidationHelper = proxyquire(process.env.PWD + "/server/helpers/validation", {
 	"./presets": {
 		check: {
 			schema: Joi.object().keys({

@@ -1,5 +1,4 @@
-require("rootpath")();
-let config = require("config");
+let config = require(process.env.PWD + "/config");
 const expect = require("chai").expect;
 const supertest = require("supertest");
 
@@ -7,7 +6,7 @@ const supertest = require("supertest");
 const api = supertest("http://localhost:" + config.server.port + "/");
 
 // Start the application
-let app = require("server/app.js");
+let app = require(process.env.PWD + "/server/app.js");
 
 describe("Server docs route", () => {
 	describe("Disabled config", () => {
@@ -31,7 +30,7 @@ describe("Server docs route", () => {
 				// Set the docs flag to true
 				config.state.docs = true;
 				// Require docs routes again, now WITH the routes
-				require("server/routes/docs")(app);
+				require(process.env.PWD + "/server/routes/docs")(app);
 			}
 
 			// Manipulate the rotuer stack

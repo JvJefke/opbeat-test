@@ -2,7 +2,6 @@
 // ---
 // Project-wide configuration
 
-require("rootpath")();
 const merge = require("lodash.merge");
 
 module.exports = merge(
