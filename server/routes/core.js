@@ -10,20 +10,16 @@ module.exports = (app) => {
 	 *     description: Status call of the server
 	 *     produces:
 	 *       - application/json
-	 *     parameters:
-	 *       - name: success
-	 *         description: Success boolean
-	 *         in: body
-	 *         required: true
-	 *         type: boolean
-	 *       - name: version
-	 *         description: App version
-	 *         in: body
-	 *         required: true
-	 *         type: string
 	 *     responses:
 	 *       200:
 	 *         description: OK
+	 *         schema:
+	 *          type: object
+	 *          properties:
+	 *            status:
+	 *              type: boolean
+	 *            version:
+	 *              type: string
 	 */
 	app.route("/status").get(CoreController.status);
 };
