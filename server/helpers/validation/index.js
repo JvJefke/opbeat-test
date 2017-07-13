@@ -6,9 +6,6 @@ const presets = require("./presets");
 const validator = (preset, onFailError, source) => {
 	const validation = Joi.validate(source, preset.schema, preset.options);
 
-	// process._rawDebug("=================================");
-	// process._rawDebug("validation", validation);
-	// process._rawDebug("=================================");
 	if (validation.error) {
 		return new Error(onFailError);
 	}
