@@ -25,9 +25,9 @@ describe("Server docs route", () => {
 	describe("Enabled config", () => {
 		before((done) => {
 			// Check if the docs route was required
-			if (require.cache["/Users/Thomas/Documents/Projects/District01/FEO/nodejs-boilerplate/server/routes/docs.js"]) {
+			if (require.cache[process.env.PWD + "/server/routes/docs.js"]) {
 				// Delete the docs route
-				delete require.cache["/Users/Thomas/Documents/Projects/District01/FEO/nodejs-boilerplate/server/routes/docs.js"];
+				delete require.cache[process.env.PWD + "/server/routes/docs.js"];
 				// Set the docs flag to true
 				config.state.docs = true;
 				// Require docs routes again, now WITH the routes
