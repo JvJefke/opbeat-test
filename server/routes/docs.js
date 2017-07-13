@@ -1,7 +1,7 @@
 require("rootpath")();
 const config = require("config");
 
-const DocsMiddleware = require("../middleware/docs");
+const DocsMiddleware = require("../middleware/compileDocs");
 const DocsController = require("server/controllers/docs");
 
 module.exports = (app) => {
