@@ -17,11 +17,12 @@ const errorHandler = (err, req, res, next) => {
 		return;
 	}
 
-	let { statusCode, msg } = ErrorHelper(err);
+	let { statusCode, msg, stack } = ErrorHelper(err);
 
 	// Return response
 	res.status(statusCode).json({
 		err: msg,
+		stack, // Stack is optional. Will only be available if the stack is defined.
 	});
 };
 

@@ -2,6 +2,13 @@ const errorHandler = (err) => {
 	let statusCode;
 	let msg = "";
 
+	// If the err name is defined, we should not check for our own custom errors
+	if (err.name && err.name !== "Error") {
+		statusCode = 400;
+		msg = `${err.name} occucerd. See the stack for more information.`;
+		return { statusCode, msg, stack: err.stack.split(/\r?\n/) };
+	}
+
 	// Get the correct message
 	switch (err.message) {
 		case "ERR_CREATING_DOCS":
