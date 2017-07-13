@@ -21,6 +21,7 @@ describe("Server docs route", () => {
 				.catch(done);
 		});
 	});
+
 	describe("Enabled config", () => {
 		before((done) => {
 			// Check if the docs route was required
