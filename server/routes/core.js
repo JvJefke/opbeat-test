@@ -1,5 +1,4 @@
 require("rootpath")();
-const config = require("config");
 
 const CoreController = require("server/controllers/core");
 
@@ -27,19 +26,4 @@ module.exports = (app) => {
 	 *         description: OK
 	 */
 	app.route("/status").get(CoreController.status);
-
-	if (config.state.docs) { // Only allow docs if configured
-		/**
-		 * @swagger
-		 * /docs:
-		 *   get:
-		 *     description: Documentation of all API's
-		 *     produces:
-		 *       - text/html
-		 *     responses:
-		 *       200:
-		 *         description: OK
-		 */
-		app.route("/docs").get(CoreController.docs);
-	}
 };
