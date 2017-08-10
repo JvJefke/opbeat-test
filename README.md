@@ -1,67 +1,55 @@
-# [PROJECT-NAME] #
+# [PROJECT-NAME] v1.0.0 #
+Short description of the project.
+
 
 # Table of contents #
 
-   * [[PROJECT-NAME]](#project-name)
-   * [Setup of the repository](#setup-of-the-repository)
-      * [Guidelines for the owner](#guidelines-for-the-owner)
-      * [Guidelines for all team members](#guidelines-for-all-team-members)
-   * [What is this repository for?](#what-is-this-repository-for)
-   * [How do I get set up?](#how-do-i-get-set-up)
-   * [Which scripts are available?](#which-scripts-are-available)
-   * [Contribution guidelines](#contribution-guidelines)
-   * [Who do I talk to?](#who-do-i-talk-to)
+* [Setup](#setup)
+    * [System Dependencies](#system-dependencies)
+    * [Init](#init)
+* [Codebase](#codebase)
+    * [Structure](#structure)
+    * [NPM Scripts](#npm-scripts)
+* [Code Contribution](#code-contribution)
+    * [Guidelines](#guidelines)
+    * [Branches](#branches)
+* [Environments](#environments)
+* [Project Context](#project-context)
+    * [Details](#details)
+    * [Team](#team)
 
-# Setup of the repository #
 
-## Guidelines for the owner ##
 
-* Fill in the Projectsheet on Google Drive
-* Enter all the necessary information in the README.md
-    * What is this repository for?
-    * Quick summary?
-    * How do I get set up?
-    * Summary of set up?
-    * Which scripts are available?
-    * Contribution guidelines
-    * Who do I talk to?
-    * Table of contents (can easily be done with [github-markdown-toc])
-* Update package.json
-    * name
-    * version
-    * homepage
-    * projectsheet url
-* Have fun coding
+## Setup ##
 
-## Guidelines for all team members ##
+### System Dependencies ###
 
-* Add yourself to the _Who do I talk to?_ list in this file (at the bottom)
-* Go through the README.md and complete where necessary
-* Have fun coding
+* List the system dependencies here.
+* Make sure to keep in mind that NPM packages that can be installed locally, should be installed locally.
+* E.g. [MongoDB 3.4.4](https://www.mongodb.com/)
+* E.g. [Node 6.10.2](https://nodejs.org/en/)
 
-# What is this repository for? #
+### Init ###
+* List the actions that are required to run the project
+* `nvm use` [Check out NVM AutoSwitch](https://github.com/lalitkapoor/nvm-auto-switch)
+* `npm i`
 
-* Quick summary
-* Version (should be the same as the `package.json` version)
 
-# How do I get set up? #
+## Codebase ##
 
-* Summary of set up
-* Configuration
-* Dependencies
-    * Software X
-    * Software Y
-* Database configuration
-* How to run linter(s)
-* How to run tests
-* Deployment instructions
-* Environments
-    * [development][development-url]
-    * [staging][staging-url]
-    * [production][production-url]
-* Extra information
+### Structure ###
+* **server/**: Contains the NodeJS server that serves the app and contains business logic.
+* **client/**: Contains the Angular website logic.
+* **config/**: Contains project-wide configuration properties.
 
-# Which scripts are available? #
+### External Services ###
+This project implements several external services:
+
+* **External Service 1**: Used for fetching news articles.
+* **External Service 2**: User for indexing content in Solr.
+
+
+### NPM Scripts ###
 
 | Command       | Description                                 |
 | ------------- |-------------------------------------------- |
@@ -86,29 +74,64 @@
 
 All commands are executable by running `npm run [COMMAND-NAME]`.
 
-# Contribution guidelines #
 
-* Writing tests
-* Code review
-* Other guidelines
 
-# Who do I talk to? #
 
-* Repo owner or admin (email)
-* Other team members (email)
+## Code Contribution ##
 
-[//]: # (All links should be included below)
+### Guidelines ###
 
-   [//]: # (Url's where the project can be found)
-   [development-url]: <https://bitbucket.org/district01/boilerplate/overview>
-   [staging-url]: <https://bitbucket.org/district01/boilerplate/overview>
-   [production-url]: <https://bitbucket.org/district01/boilerplate/overview>
 
-   [//]: # (Front End Ops repositories)
-   [Issues guide]: <https://bitbucket.org/district01/boilerplate/issues?status=new&status=open>
-   [boilerplate]: <https://bitbucket.org/district01/boilerplate>
-   [machine-setup]: <https://bitbucket.org/district01/machine-setup>
-   [npm-scripts]: <https://bitbucket.org/district01/npm-scripts>
+### Branches ###
 
-   [//]: # (Miscellaneous)
-   [github-markdown-toc]: <https://github.com/ekalinin/github-markdown-toc>
+We follow these naming conventions:
+
+* **master**: Production-ready code.
+* **develop**: Development code.
+* **release/***: Snapshot of a release.
+* **feature/***: For developing new features.
+* **bugfix/***: For bugs that are logged during testing.
+* **hotfix/***: Only for hotfixing critical bugs from the `master`-branch.
+
+
+
+
+## Environments ##
+
+### Development ###
+The development environment receives automatic builds when code is contributed to the `development`-branch. This environment is expected to break from time to time and thus should be used for **internal testing only**!
+
+**URL**: [https://bitbucket.org/district01/boilerplate/overview](https://bitbucket.org/district01/boilerplate/overview)
+
+### Staging ###
+The staging environment receives automatic builds when code is contributed to the `master`-branch. This environment is expected to remain stable and should be used for **client validation testing**.
+
+**URL**: [https://bitbucket.org/district01/boilerplate/overview](https://bitbucket.org/district01/boilerplate/overview)
+
+### Production ###
+The production environment is built manually from the `master`-branch. This environment has to be **stable at all times**. No unvalidated code can be deployed on this environment.
+
+**URL**: [https://bitbucket.org/district01/boilerplate/overview](https://bitbucket.org/district01/boilerplate/overview)
+
+
+
+## Project Context ##
+This project is a New-Media team effort.
+
+### Details ###
+
+* **Client**: Digipolis
+* **Start**: 12/10/2017
+* **Jira Board**: http://www.district01.be
+* **Drive Folder**: http://www.district01.be
+* **Project Sheet**: http://www.district01.be
+
+### Team ###
+List the team that has worked on this project, including the duration e.g.:
+
+* [Developer 1 - District01](developer-1@district01.be)
+    * **Function**: Lead Front-End Dev
+    * **Period**: October 2017 -> December 2017
+* [Developer 2 - District01](developer-2@district01.be)
+    * **Function**: Lead Technical Dev
+    * **Period**: October 2017 -> December 2017
