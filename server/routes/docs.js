@@ -1,4 +1,4 @@
-const config = require(process.env.PWD + "/config");
+const config = require(process.cwd() + "/config");
 
 const DocsMiddleware = require("../middleware/compileDocs");
 const DocsController = require("../controllers/docs");
