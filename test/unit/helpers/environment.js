@@ -10,7 +10,7 @@ describe("Environment helper", () => {
 
 		expect(function() {
 			EnvironmentHelper(env);
-		}).to.throw(Error, "Config validation error: NODE_ENV_NOT_VALID.");
+		}).to.throw(Error, "NODE_ENV_NOT_VALID");
 
 		done();
 	});

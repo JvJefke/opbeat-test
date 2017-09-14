@@ -16,9 +16,10 @@ const ValidationHelper = proxyquire("server/helpers/validation", {
 describe("Validator helper", () => {
 	it("Should throw a custom error when the object is not valid", function(done) {
 		const obj = {};
-		const validation = ValidationHelper.validator(ValidationHelper.presets.check, "DEFINED_ERROR", obj);
 
-		expect(validation.message).to.be.equal("DEFINED_ERROR");
+		expect(function() {
+			ValidationHelper.validator(ValidationHelper.presets.check, "DEFINED_ERROR", obj);
+		}).to.throw(Error, "DEFINED_ERROR");
 
 		done();
 	});
