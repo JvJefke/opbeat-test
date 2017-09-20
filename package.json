@@ -2,7 +2,7 @@
   "name": "nodejs-boilerplate",
   "version": "1.0.0-alpha.1",
   "description": "Boilerplate for consistent project structures and maintenance.",
-  "main": "server/app.js",
+  "main": "index.js",
   "scripts": {
     "start": "npm i",
     "nodemon": "./node_modules/.bin/nodemon",

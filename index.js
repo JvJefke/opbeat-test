@@ -1,1 +1,1 @@
-console.log("Hi script!");
+require("./server/app");
