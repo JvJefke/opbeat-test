@@ -9,7 +9,8 @@ const validator = (preset, onFailError, source) => {
 	if (validation.error) {
 		throw new Error(onFailError);
 	}
-	return source;
+	// Return value from validation, for casting etc
+	return validation.value;
 };
 
 module.exports = {

@@ -31,7 +31,8 @@ describe("Validator helper", () => {
 		const validation = ValidationHelper.validator(ValidationHelper.presets.check, "DEFINED_ERROR", obj);
 
 		expect(validation).to.be.an("object");
-		expect(validation).to.be.equal(obj);
+		expect(validation).to.have.property("key");
+		expect(validation.key).to.be.equal(obj.key);
 
 		done();
 	});
