@@ -1,0 +1,26 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for consistent project structures and maintenance.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm i",
+    "projectsheet": "open $npm_package_district01_projectsheet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/district01/boilerplate.git"
+  },
+  "author": "Fabian Meul <fabian.meul@district01.be>",
+  "contributors": [
+    "Fabian Meul <fabian.meul@district01.be>",
+    "Thomas Bormans <thomas.bormans@district01.be>"
+  ],
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/district01/boilerplate#readme",
+  "dependencies": {},
+  "devDependencies": {},
+  "district01": {
+    "projectsheet": "https://bitbucket.org/district01/boilerplate/overview"
+  }
+}
