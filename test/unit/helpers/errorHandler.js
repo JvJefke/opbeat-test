@@ -9,10 +9,8 @@ describe("Error handler helper", () => {
 		const result = errorHandler(err);
 
 		expect(result).to.be.an("object");
-		expect(result).to.have.property("statusCode");
-		expect(result.statusCode).to.be.equal(400);
-		expect(result).to.have.property("msg");
-		expect(result.msg).to.be.equal("Unable to create the docs.");
+		expect(result).to.have.property("statusCode", 400);
+		expect(result).to.have.property("msg", "Unable to create the docs.");
 
 		done();
 	});
@@ -22,10 +20,8 @@ describe("Error handler helper", () => {
 		const result = errorHandler(err);
 
 		expect(result).to.be.an("object");
-		expect(result).to.have.property("statusCode");
-		expect(result.statusCode).to.be.equal(401);
-		expect(result).to.have.property("msg");
-		expect(result.msg).to.be.equal("Not authorized.");
+		expect(result).to.have.property("statusCode", 401);
+		expect(result).to.have.property("msg", "Not authorized.");
 
 		done();
 	});
@@ -35,10 +31,8 @@ describe("Error handler helper", () => {
 		const result = errorHandler(err);
 
 		expect(result).to.be.an("object");
-		expect(result).to.have.property("statusCode");
-		expect(result.statusCode).to.be.equal(404);
-		expect(result).to.have.property("msg");
-		expect(result.msg).to.be.equal("Item not found.");
+		expect(result).to.have.property("statusCode", 404);
+		expect(result).to.have.property("msg", "Item not found.");
 
 		done();
 	});
@@ -48,10 +42,8 @@ describe("Error handler helper", () => {
 		const result = errorHandler(err);
 
 		expect(result).to.be.an("object");
-		expect(result).to.have.property("statusCode");
-		expect(result.statusCode).to.be.equal(500);
-		expect(result).to.have.property("msg");
-		expect(result.msg).to.be.equal("Something unexpected happened.");
+		expect(result).to.have.property("statusCode", 500);
+		expect(result).to.have.property("msg", "Something unexpected happened.");
 
 		done();
 	});
@@ -61,10 +53,8 @@ describe("Error handler helper", () => {
 		const result = errorHandler(err);
 
 		expect(result).to.be.an("object");
-		expect(result).to.have.property("statusCode");
-		expect(result.statusCode).to.be.equal(500);
-		expect(result).to.have.property("msg");
-		expect(result.msg).to.be.equal("Random error");
+		expect(result).to.have.property("statusCode", 500);
+		expect(result).to.have.property("msg", "Random error");
 
 		done();
 	});
