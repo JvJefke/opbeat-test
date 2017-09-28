@@ -6,7 +6,7 @@ describe("Environment helper", () => {
 	it("Should throw an error when NODE_ENV is not defined", function(done) {
 		const env = {};
 
-		expect(function() {
+		expect(() => {
 			EnvironmentHelper(env);
 		}).to.throw(Error, "Config validation error: child \"NODE_ENV\" fails because [\"NODE_ENV\" is required]");
 
@@ -18,7 +18,7 @@ describe("Environment helper", () => {
 			NODE_ENV: "invalid",
 		};
 
-		expect(function() {
+		expect(() => {
 			EnvironmentHelper(env);
 		}).to.throw(Error, /(Config validation error: child "NODE_ENV" fails because \["NODE_ENV" must be one of \[)(.*?\])(\])/);
 
@@ -30,7 +30,7 @@ describe("Environment helper", () => {
 			NODE_ENV: "test",
 		};
 
-		expect(function() {
+		expect(() => {
 			EnvironmentHelper(env);
 		}).to.not.throw(Error);
 
