@@ -25,9 +25,57 @@ describe("Environment helper", () => {
 		done();
 	});
 
-	it("Should do not throw an error when the env is valid", function(done) {
+	it("Should see if the `local` environment is valid", function(done) {
+		const env = {
+			NODE_ENV: "local",
+		};
+
+		expect(() => {
+			EnvironmentHelper(env);
+		}).to.not.throw(Error);
+
+		done();
+	});
+
+	it("Should see if the `test` environment is valid", function(done) {
 		const env = {
 			NODE_ENV: "test",
+		};
+
+		expect(() => {
+			EnvironmentHelper(env);
+		}).to.not.throw(Error);
+
+		done();
+	});
+
+	it("Should see if the `development` environment is valid", function(done) {
+		const env = {
+			NODE_ENV: "development",
+		};
+
+		expect(() => {
+			EnvironmentHelper(env);
+		}).to.not.throw(Error);
+
+		done();
+	});
+
+	it("Should see if the `staging` environment is valid", function(done) {
+		const env = {
+			NODE_ENV: "staging",
+		};
+
+		expect(() => {
+			EnvironmentHelper(env);
+		}).to.not.throw(Error);
+
+		done();
+	});
+
+	it("Should see if the `production` environment is valid", function(done) {
+		const env = {
+			NODE_ENV: "production",
 		};
 
 		expect(() => {
