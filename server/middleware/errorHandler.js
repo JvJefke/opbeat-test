@@ -1,10 +1,29 @@
-module.exports = function(err, req, res, next) {
-	if (res.headersSent) {
-		return next(err);
+require("rootpath")();
+const ErrorHelper = require("server/helpers/errorHandler");
+
+const errorHandler = (err, req, res, next) => {
+	// Check if there is an error
+	if (!err) {
+		next();
 	}
 
-	res.status(500).json({
-		err: (err.message ? err.message : "Something unexpected happened."),
+	// Check if the error is of type string
+	// If so, "convert" it to an error
+	if (typeof err === "string") {
+		err = new Error(err);
+	}
+
+	// Do not send multiple responses
+	if (res.headersSent) {
+		return;
+	}
+
+	let { statusCode, msg } = ErrorHelper(err);
+
+	// Return response
+	res.status(statusCode).json({
+		err: msg,
 	});
-	return;
 };
+
+module.exports = errorHandler;
