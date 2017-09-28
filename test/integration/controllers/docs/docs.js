@@ -53,29 +53,15 @@ describe("Server docs route", () => {
 		it("Should return the HTML docs because the docs flag is enabled", function(done) {
 			api
 				.get("docs")
-				.then((response) => {
-					expect(response.statusCode).to.be.equal(200);
-					expect(response).to.have.property("headers");
-					expect(response.headers).to.be.an("object");
-					expect(response.headers).to.have.property("content-type");
-					expect(response.headers["content-type"]).to.be.contain("text/html");
-					done();
-				})
-				.catch(done);
+				.expect('Content-Type', /html/)
+				.expect(200, done);
 		});
 
 		it("Should return the JSON docs because the docs flag is enabled", function(done) {
 			api
 				.get("docs/json")
-				.then((response) => {
-					expect(response.statusCode).to.be.equal(200);
-					expect(response).to.have.property("headers");
-					expect(response.headers).to.be.an("object");
-					expect(response.headers).to.have.property("content-type");
-					expect(response.headers["content-type"]).to.be.contain("application/json");
-					done();
-				})
-				.catch(done);
+				.expect('Content-Type', /json/)
+				.expect(200, done);
 		});
 	});
 });
