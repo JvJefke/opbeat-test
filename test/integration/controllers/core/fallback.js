@@ -1,5 +1,4 @@
-require("rootpath")();
-const config = require("config");
+const config = require(process.env.PWD + "/config");
 const expect = require("chai").expect;
 const supertest = require("supertest");
 
@@ -7,7 +6,7 @@ const supertest = require("supertest");
 const api = supertest("http://localhost:" + config.server.port + "/");
 
 // Start the application
-require("server/app.js");
+require(process.env.PWD + "/server/app.js");
 
 describe("Server fallback route", () => {
 	it("Should return the fallback route message", function(done) {

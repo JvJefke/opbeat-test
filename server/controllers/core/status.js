@@ -1,5 +1,4 @@
-require("rootpath")();
-const packageJson = require("package.json");
+const packageJson = require(process.env.PWD + "/package.json");
 
 module.exports = (req, res) => {
 	res.status(200).json({

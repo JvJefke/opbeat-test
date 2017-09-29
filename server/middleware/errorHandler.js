@@ -1,5 +1,4 @@
-require("rootpath")();
-const ErrorHelper = require("server/helpers/errorHandler");
+const ErrorHelper = require("../helpers/errorHandler");
 
 const errorHandler = (err, req, res, next) => {
 	// Check if there is an error

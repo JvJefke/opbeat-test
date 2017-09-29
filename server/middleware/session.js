@@ -1,7 +1,6 @@
-require("rootpath")();
 const session = require("express-session");
 const Store = require("session-file-store")(session);
-const config = require("config");
+const config = require(process.env.PWD + "/config");
 
 module.exports = session({
 	saveUninitialized: true,

@@ -1,7 +1,6 @@
-require("rootpath")();
 const expect = require("chai").expect;
 
-const errorHandler = require("server/helpers/errorHandler");
+const errorHandler = require(process.env.PWD + "/server/helpers/errorHandler");
 
 describe("Error handler helper", () => {
 	it("Should return the error for creating docs", function(done) {

@@ -1,4 +1,3 @@
-require("rootpath")();
 const prettySwag = require("pretty-swag");
 
 // Set config for Swagger UI

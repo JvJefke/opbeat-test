@@ -1,6 +1,5 @@
-require("rootpath")();
 const expect = require("chai").expect;
-const EnvironmentHelper = require("server/helpers/environment");
+const EnvironmentHelper = require(process.env.PWD + "/server/helpers/environment");
 
 describe("Environment helper", () => {
 	it("Should throw an error when NODE_ENV is not defined", function(done) {
