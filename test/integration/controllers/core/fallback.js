@@ -14,8 +14,7 @@ describe("Server fallback route", () => {
 			.get("gibberish")
 			.then((response) => {
 				expect(response).to.be.an("object");
-				expect(response).to.have.property("text");
-				expect(response.text).to.be.equal("This is the fallback route.");
+				expect(response).to.have.property("text", "This is the fallback route.");
 				done();
 			});
 	});

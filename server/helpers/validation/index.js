@@ -7,9 +7,10 @@ const validator = (preset, onFailError, source) => {
 	const validation = Joi.validate(source, preset.schema, preset.options);
 
 	if (validation.error) {
-		return new Error(onFailError);
+		throw new Error(onFailError);
 	}
-	return source;
+	// Return value from validation, for casting etc
+	return validation.value;
 };
 
 module.exports = {
