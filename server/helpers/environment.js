@@ -1,8 +1,13 @@
-const ValidationHelper = require("./validation");
+// We cannot require `config` because this requires the environment config
+// And we are checking if the environment config is valid... :)
+const generalConfig = require(process.cwd() + "/config/general");
+const Joi = require("joi");
 
 module.exports = (env) => {
-	// Set default environment to `local` if missing
-	env.NODE_ENV = env.NODE_ENV || "local";
+	// Validate env
+	const schema = Joi.object().keys({
+		NODE_ENV: Joi.string().required().valid(generalConfig.server.environments),
+	});
 
 	ValidationHelper.validator(ValidationHelper.presets.nodeEnvironment, "NODE_ENV_NOT_VALID", env);
 };

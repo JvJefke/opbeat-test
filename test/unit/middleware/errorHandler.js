@@ -23,8 +23,7 @@ describe("Error handler middleware", () => {
 				return {
 					json: (body) => {
 						expect(body).to.be.an("object");
-						expect(body).to.have.property("err");
-						expect(body.err).to.be.equal(err.message);
+						expect(body).to.have.property("err", err.message);
 						done();
 					},
 				};
@@ -45,8 +44,7 @@ describe("Error handler middleware", () => {
 				return {
 					json: (body) => {
 						expect(body).to.be.an("object");
-						expect(body).to.have.property("err");
-						expect(body.err).to.be.equal(err.message);
+						expect(body).to.have.property("err", err.message);
 						done();
 					},
 				};

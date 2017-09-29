@@ -5,11 +5,11 @@ module.exports = {
 		docs: false,
 	},
 	server: {
-		environments: [ // Available environments
+		environments: [
 			"local",
 			"test",
 			"development",
-			"acceptance",
+			"staging",
 			"production",
 		],
 		cookies: {
