@@ -1,8 +1,6 @@
 require("rootpath")();
 
-// Set default environment to `local`
-process.env.NODE_ENV = process.env.NODE_ENV || "local";
-// Check if environment is configured
+// Check if environment is configured and valid
 require("server/helpers/environment")(process.env);
 
 const app = require("express")();

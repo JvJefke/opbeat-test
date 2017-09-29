@@ -20,7 +20,7 @@ describe("Environment helper", () => {
 
 		expect(() => {
 			EnvironmentHelper(env);
-		}).to.throw(Error, /(Config validation error: child "NODE_ENV" fails because \["NODE_ENV" must be one of \[)(.*?\])(\])/);
+		}).to.throw(Error, "NODE_ENV_NOT_VALID");
 
 		done();
 	});
@@ -82,6 +82,16 @@ describe("Environment helper", () => {
 			EnvironmentHelper(env);
 		}).to.not.throw(Error);
 
+		done();
+	});
+
+	it("Should set the environment to the default environment when missing", function(done) {
+		const env = {};
+
+		EnvironmentHelper(env);
+
+		expect(process.env.NODE_ENV).to.be.a("string");
+		expect(process.env.NODE_ENV).to.be.equal("test");
 		done();
 	});
 });

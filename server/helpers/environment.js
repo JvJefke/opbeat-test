@@ -9,11 +9,5 @@ module.exports = (env) => {
 		NODE_ENV: Joi.string().required().valid(generalConfig.server.environments),
 	});
 
-	const { error } = Joi.validate(env, schema, {
-		allowUnknown: true,
-	});
-
-	if (error) {
-		throw new Error(`Config validation error: ${error.message}`);
-	}
+	ValidationHelper.validator(ValidationHelper.presets.nodeEnvironment, "NODE_ENV_NOT_VALID", env);
 };
