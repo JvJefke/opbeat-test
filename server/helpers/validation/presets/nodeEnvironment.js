@@ -1,6 +1,6 @@
 // We cannot require `config` because this requires the environment config
 // And we are checking if the environment config is valid... :)
-const generalConfig = require(process.env.PWD + "/config/general");
+const generalConfig = require(process.cwd() + "/config/general");
 const Joi = require("joi");
 
 const options = require("./options");

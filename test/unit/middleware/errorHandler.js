@@ -1,6 +1,6 @@
 const expect = require("chai").expect;
 
-const errorHandler = require(process.env.PWD + "/server/middleware/errorHandler");
+const errorHandler = require(process.cwd() + "/server/middleware/errorHandler");
 
 describe("Error handler middleware", () => {
 	it("Should skip if there is no error", function(done) {
@@ -27,7 +27,7 @@ describe("Error handler middleware", () => {
 				};
 			},
 		};
-		const next = require(process.env.PWD + "/server/middleware/errorHandler");
+		const next = require(process.cwd() + "/server/middleware/errorHandler");
 
 		errorHandler(err, req, res, next);
 	});
@@ -48,7 +48,7 @@ describe("Error handler middleware", () => {
 				};
 			},
 		};
-		const next = require(process.env.PWD + "/server/middleware/errorHandler");
+		const next = require(process.cwd() + "/server/middleware/errorHandler");
 
 		let result = errorHandler(err, req, res, next);
 
