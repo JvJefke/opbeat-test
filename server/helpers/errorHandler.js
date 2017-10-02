@@ -5,7 +5,7 @@ const errorHandler = (err) => {
 	// If the err name is defined, we should not check for our own custom errors
 	if (err.name && err.name !== "Error") {
 		statusCode = 400;
-		msg = `${err.name} occucerd. See the stack for more information.`;
+		msg = `${err.name} Occured. See the stack for more information.`;
 		return { statusCode, msg, stack: err.stack.split(/\r?\n/) };
 	}
 

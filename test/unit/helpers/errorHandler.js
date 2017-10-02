@@ -11,7 +11,7 @@ describe("Error handler helper", () => {
 		expect(result).to.have.property("statusCode");
 		expect(result.statusCode).to.be.equal(400);
 		expect(result).to.have.property("msg");
-		expect(result.msg).to.be.equal("TypeError occucerd. See the stack for more information.");
+		expect(result.msg).to.be.equal("TypeError occured. See the stack for more information.");
 		expect(result).to.have.property("stack");
 
 		done();
