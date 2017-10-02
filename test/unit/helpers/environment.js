@@ -1,7 +1,7 @@
 const expect = require("chai").expect;
 const EnvironmentHelper = require(process.env.PWD + "/server/helpers/environment");
 
-describe.only("Environment helper", () => {
+describe("Environment helper", () => {
 	it("Should throw an error when NODE_ENV is not valid", function(done) {
 		const env = {
 			NODE_ENV: "invalid",
