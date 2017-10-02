@@ -3,6 +3,18 @@ const expect = require("chai").expect;
 const errorHandler = require(process.env.PWD + "/server/helpers/errorHandler");
 
 describe("Error handler helper", () => {
+	it("Should return an error with stack", function(done) {
+		const err = new TypeError("ERR_CREATING_DOCS");
+		const result = errorHandler(err);
+
+		expect(result).to.be.an("object");
+		expect(result).to.have.property("statusCode", 400);
+		expect(result).to.have.property("msg", "TypeError occured. See the stack for more information.");
+		expect(result).to.have.property("stack");
+
+		done();
+	});
+
 	it("Should return the error for creating docs", function(done) {
 		const err = new Error("ERR_CREATING_DOCS");
 		const result = errorHandler(err);

@@ -12,7 +12,6 @@ describe("Error handler middleware", () => {
 
 	it("Should return a custom error message", function(done) {
 		const err = {
-			name: "Custom error name",
 			message: "Custom error message",
 		};
 		const req = {};
