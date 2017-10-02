@@ -4,7 +4,7 @@
   "description": "Boilerplate for consistent project structures and maintenance.",
   "main": "index.js",
   "scripts": {
-    "start": "npm i",
+    "start": "npm i && node index.js",
     "nodemon": "./node_modules/.bin/nodemon",
     "pm2": "./node_modules/.bin/pm2",
     "fixtures": "echo \"No command specified\" && exit 0",
