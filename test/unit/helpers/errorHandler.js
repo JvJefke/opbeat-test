@@ -8,10 +8,8 @@ describe("Error handler helper", () => {
 		const result = errorHandler(err);
 
 		expect(result).to.be.an("object");
-		expect(result).to.have.property("statusCode");
-		expect(result.statusCode).to.be.equal(400);
-		expect(result).to.have.property("msg");
-		expect(result.msg).to.be.equal("TypeError occured. See the stack for more information.");
+		expect(result).to.have.property("statusCode", 400);
+		expect(result).to.have.property("msg", "TypeError occured. See the stack for more information.");
 		expect(result).to.have.property("stack");
 
 		done();
