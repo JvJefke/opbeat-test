@@ -73,4 +73,14 @@ describe.only("Environment helper", () => {
 
 		done();
 	});
+
+	it("Should set the environment to the default environment when missing", function(done) {
+		const env = {};
+
+		EnvironmentHelper(env);
+
+		expect(process.env.NODE_ENV).to.be.a("string");
+		expect(process.env.NODE_ENV).to.be.equal("test");
+		done();
+	});
 });
