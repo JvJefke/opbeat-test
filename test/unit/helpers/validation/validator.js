@@ -1,6 +1,6 @@
 const expect = require("chai").expect;
 const proxyquire = require("proxyquire");
-const Joi = require("Joi");
+const Joi = require("joi");
 const ValidationHelper = proxyquire(process.cwd() + "/server/helpers/validation", {
 	"./presets": {
 		check: {
