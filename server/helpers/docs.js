@@ -18,6 +18,7 @@ const config = {
 		POST: "indigo",
 		DELETE: "red",
 		PUT: "amber",
+		PATCH: "orange",
 	},
 };
 
