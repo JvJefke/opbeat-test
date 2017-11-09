@@ -52,14 +52,14 @@ describe("Server docs route", () => {
 		it("Should return the HTML docs because the docs flag is enabled", (done) => {
 			api
 				.get("docs")
-				.expect('Content-Type', /html/)
+				.expect("Content-Type", /html/)
 				.expect(200, done);
 		});
 
 		it("Should return the JSON docs because the docs flag is enabled", (done) => {
 			api
 				.get("docs/json")
-				.expect('Content-Type', /json/)
+				.expect("Content-Type", /json/)
 				.expect(200, done);
 		});
 	});

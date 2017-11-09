@@ -45,7 +45,7 @@ describe("Error handler middleware", () => {
 						expect(body).to.have.property("err", err.message);
 						done();
 					},
-			to	};
+				};
 			},
 		};
 		const next = require(process.cwd() + "/server/middleware/errorHandler");
