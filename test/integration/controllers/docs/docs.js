@@ -10,7 +10,7 @@ let app = require(process.cwd() + "/server/app.js");
 
 describe("Server docs route", () => {
 	describe("Disabled config", () => {
-		it("Should return the fallback message because the docs are disabled by default", function(done) {
+		it("Should return the fallback message because the docs are disabled by default", (done) => {
 			api
 				.get("docs")
 				.then((response) => {
@@ -49,14 +49,14 @@ describe("Server docs route", () => {
 			done();
 		});
 
-		it("Should return the HTML docs because the docs flag is enabled", function(done) {
+		it("Should return the HTML docs because the docs flag is enabled", (done) => {
 			api
 				.get("docs")
 				.expect('Content-Type', /html/)
 				.expect(200, done);
 		});
 
-		it("Should return the JSON docs because the docs flag is enabled", function(done) {
+		it("Should return the JSON docs because the docs flag is enabled", (done) => {
 			api
 				.get("docs/json")
 				.expect('Content-Type', /json/)

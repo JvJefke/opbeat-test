@@ -13,17 +13,17 @@ const ValidationHelper = proxyquire(process.cwd() + "/server/helpers/validation"
 });
 
 describe("Validator helper", () => {
-	it("Should throw a custom error when the object is not valid", function(done) {
+	it("Should throw a custom error when the object is not valid", (done) => {
 		const obj = {};
 
-		expect(function() {
+		expect(() => {
 			ValidationHelper.validator(ValidationHelper.presets.check, "DEFINED_ERROR", obj);
 		}).to.throw(Error, "DEFINED_ERROR");
 
 		done();
 	});
 
-	it("Should return the source when the object is valid", function(done) {
+	it("Should return the source when the object is valid", (done) => {
 		const obj = {
 			key: "value",
 		};
