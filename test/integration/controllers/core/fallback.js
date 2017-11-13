@@ -9,7 +9,7 @@ const api = supertest("http://localhost:" + config.server.port + "/");
 require(process.cwd() + "/server/app.js");
 
 describe("Server fallback route", () => {
-	it("Should return the fallback route message", function(done) {
+	it("Should return the fallback route message", (done) => {
 		api
 			.get("gibberish")
 			.then((response) => {

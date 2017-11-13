@@ -9,7 +9,7 @@ const api = supertest("http://localhost:" + config.server.port + "/");
 require(process.cwd() + "/server/app.js");
 
 describe("Server status route", () => {
-	it("Should return the server status", function(done) {
+	it("Should return the server status", (done) => {
 		api
 			.get("status")
 			.then((response) => {

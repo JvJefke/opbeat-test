@@ -3,7 +3,7 @@ const expect = require("chai").expect;
 const errorHandler = require(process.cwd() + "/server/helpers/errorHandler");
 
 describe("Error handler helper", () => {
-	it("Should return an error with stack", function(done) {
+	it("Should return an error with stack", (done) => {
 		const err = new TypeError("ERR_CREATING_DOCS");
 		const result = errorHandler(err);
 
@@ -15,7 +15,7 @@ describe("Error handler helper", () => {
 		done();
 	});
 
-	it("Should return the error for creating docs", function(done) {
+	it("Should return the error for creating docs", (done) => {
 		const err = new Error("ERR_CREATING_DOCS");
 		const result = errorHandler(err);
 
@@ -26,7 +26,7 @@ describe("Error handler helper", () => {
 		done();
 	});
 
-	it("Should return the missing authorization error", function(done) {
+	it("Should return the missing authorization error", (done) => {
 		const err = new Error("MISSING_AUTHORIZATION");
 		const result = errorHandler(err);
 
@@ -37,7 +37,7 @@ describe("Error handler helper", () => {
 		done();
 	});
 
-	it("Should return the item not found error", function(done) {
+	it("Should return the item not found error", (done) => {
 		const err = new Error("ITEM_NOT_FOUND");
 		const result = errorHandler(err);
 
@@ -48,7 +48,7 @@ describe("Error handler helper", () => {
 		done();
 	});
 
-	it("Should return the default error", function(done) {
+	it("Should return the default error", (done) => {
 		const err = "Random error";
 		const result = errorHandler(err);
 
@@ -59,7 +59,7 @@ describe("Error handler helper", () => {
 		done();
 	});
 
-	it("Should return the thrown error when not known", function(done) {
+	it("Should return the thrown error when not known", (done) => {
 		const err = new Error("Random error");
 		const result = errorHandler(err);
 

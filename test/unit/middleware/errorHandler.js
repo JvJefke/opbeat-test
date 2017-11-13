@@ -3,14 +3,14 @@ const expect = require("chai").expect;
 const errorHandler = require(process.cwd() + "/server/middleware/errorHandler");
 
 describe("Error handler middleware", () => {
-	it("Should skip if there is no error", function(done) {
+	it("Should skip if there is no error", (done) => {
 		errorHandler(null, null, null, (err) => {
 			expect(err).to.be.undefined;
 			done();
 		});
 	});
 
-	it("Should return a custom error message", function(done) {
+	it("Should return a custom error message", (done) => {
 		const err = {
 			message: "Custom error message",
 		};
@@ -32,7 +32,7 @@ describe("Error handler middleware", () => {
 		errorHandler(err, req, res, next);
 	});
 
-	it("Should do nothing when the headers are already sent", function(done) {
+	it("Should do nothing when the headers are already sent", (done) => {
 		const err = "Some error message";
 		const req = {};
 		const res = {

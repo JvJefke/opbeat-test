@@ -2,7 +2,7 @@ const expect = require("chai").expect;
 const DocsHelper = require(process.cwd() + "/server/helpers/docs");
 
 describe("Docs helper", () => {
-	it("Should return an error because no Swagger JSON was given", function(done) {
+	it("Should return an error because no Swagger JSON was given", (done) => {
 		DocsHelper()
 			.then((response) => {
 				expect(response).to.be.undefined;
@@ -14,7 +14,7 @@ describe("Docs helper", () => {
 			});
 	});
 
-	it("Should return html because the Swagger JSON is valid", function(done) {
+	it("Should return html because the Swagger JSON is valid", (done) => {
 		const swagger = {
 			info: {
 				title: "nodejs-boilerplate",

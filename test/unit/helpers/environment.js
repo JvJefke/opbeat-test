@@ -2,7 +2,7 @@ const expect = require("chai").expect;
 const EnvironmentHelper = require(process.cwd() + "/server/helpers/environment");
 
 describe("Environment helper", () => {
-	it("Should throw an error when NODE_ENV is not valid", function(done) {
+	it("Should throw an error when NODE_ENV is not valid", (done) => {
 		const env = {
 			NODE_ENV: "invalid",
 		};
@@ -14,7 +14,7 @@ describe("Environment helper", () => {
 		done();
 	});
 
-	it("Should see if the `local` environment is valid", function(done) {
+	it("Should see if the `local` environment is valid", (done) => {
 		const env = {
 			NODE_ENV: "local",
 		};
@@ -26,7 +26,7 @@ describe("Environment helper", () => {
 		done();
 	});
 
-	it("Should see if the `test` environment is valid", function(done) {
+	it("Should see if the `test` environment is valid", (done) => {
 		const env = {
 			NODE_ENV: "test",
 		};
@@ -38,7 +38,7 @@ describe("Environment helper", () => {
 		done();
 	});
 
-	it("Should see if the `development` environment is valid", function(done) {
+	it("Should see if the `development` environment is valid", (done) => {
 		const env = {
 			NODE_ENV: "development",
 		};
@@ -50,7 +50,7 @@ describe("Environment helper", () => {
 		done();
 	});
 
-	it("Should see if the `staging` environment is valid", function(done) {
+	it("Should see if the `staging` environment is valid", (done) => {
 		const env = {
 			NODE_ENV: "staging",
 		};
@@ -62,7 +62,7 @@ describe("Environment helper", () => {
 		done();
 	});
 
-	it("Should see if the `production` environment is valid", function(done) {
+	it("Should see if the `production` environment is valid", (done) => {
 		const env = {
 			NODE_ENV: "production",
 		};
@@ -74,7 +74,7 @@ describe("Environment helper", () => {
 		done();
 	});
 
-	it("Should set the environment to the default environment when missing", function(done) {
+	it("Should set the environment to the default environment when missing", (done) => {
 		const env = {};
 
 		EnvironmentHelper(env);
