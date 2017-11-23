@@ -1,0 +1,57 @@
+{
+  "name": "nodejs-boilerplate",
+  "version": "1.0.0-alpha.1",
+  "description": "Boilerplate for consistent project structures and maintenance.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm i && node index.js",
+    "nodemon": "./node_modules/.bin/nodemon",
+    "pm2": "./node_modules/.bin/pm2",
+    "fixtures": "echo \"No command specified\" && exit 0",
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "./node_modules/.bin/eslint config/** server/** test/**",
+    "test": "NODE_ENV=test ./node_modules/.bin/istanbul cover --dir ./test/coverage ./node_modules/.bin/_mocha -- -R spec -t 15000 --recursive",
+    "projectsheet": "open $npm_package_district01_projectsheet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/district01/nodejs-boilerplate.git"
+  },
+  "author": "Fabian Meul <fabian.meul@district01.be>",
+  "contributors": [
+    "Fabian Meul <fabian.meul@district01.be>",
+    "Thomas Bormans <thomas.bormans@district01.be>"
+  ],
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/district01/nodejs-boilerplate",
+  "dependencies": {
+    "body-parser": "1.17.1",
+    "cookie-parser": "1.4.3",
+    "express": "4.15.2",
+    "express-session": "1.15.2",
+    "glob": "7.1.1",
+    "helmet": "3.6.0",
+    "joi": "10.4.1",
+    "lodash.curry": "4.1.1",
+    "lodash.merge": "4.6.0",
+    "session-file-store": "1.0.0"
+  },
+  "devDependencies": {
+    "@district01/eslint-config": "1.0.0",
+    "chai": "4.0.2",
+    "eslint": "3.19.0",
+    "eslint-plugin-chai-friendly": "0.3.6",
+    "express-remove-route": "1.0.0",
+    "istanbul": "0.4.5",
+    "mocha": "3.4.2",
+    "nodemon": "1.11.0",
+    "pm2": "2.4.6",
+    "pretty-swag": "0.1.100",
+    "proxyquire": "1.8.0",
+    "supertest": "3.0.0",
+    "swagger-jsdoc": "1.9.4"
+  },
+  "district01": {
+    "projectsheet": "https://bitbucket.org/district01/nodejs-boilerplate/overview"
+  }
+}
