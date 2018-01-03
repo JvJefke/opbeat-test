@@ -10,7 +10,7 @@
     "fixtures": "echo \"No command specified\" && exit 0",
     "lint": "npm run lint:eslint",
     "lint:eslint": "./node_modules/.bin/eslint config/** server/** test/**",
-    "test": "NODE_ENV=test ./node_modules/.bin/istanbul cover --dir ./test/coverage ./node_modules/.bin/_mocha -- -R spec -t 15000 --recursive",
+    "test": "NODE_ENV=test ./node_modules/.bin/istanbul cover --dir ./test/coverage ./node_modules/.bin/_mocha -- -R spec -t 15000 --recursive --exit",
     "projectsheet": "open $npm_package_district01_projectsheet"
   },
   "repository": {
@@ -41,11 +41,10 @@
     "chai": "4.0.2",
     "eslint": "3.19.0",
     "eslint-plugin-chai-friendly": "0.3.6",
-    "express-remove-route": "1.0.0",
     "istanbul": "0.4.5",
-    "mocha": "3.4.2",
+    "mocha": "4.0.1",
     "nodemon": "1.11.0",
-    "pm2": "2.4.6",
+    "pm2": "2.8.0",
     "pretty-swag": "0.1.100",
     "proxyquire": "1.8.0",
     "supertest": "3.0.0",
