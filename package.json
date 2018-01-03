@@ -10,7 +10,8 @@
     "fixtures": "echo \"No command specified\" && exit 0",
     "lint": "npm run lint:eslint",
     "lint:eslint": "./node_modules/.bin/eslint config/** server/** test/**",
-    "test": "NODE_ENV=test ./node_modules/.bin/istanbul cover --dir ./test/coverage ./node_modules/.bin/_mocha -- -R spec -t 15000 --recursive --exit",
+    "clean": "rimraf ./test/coverage",
+    "test": "npm run clean && NODE_ENV=test ./node_modules/.bin/istanbul cover --dir ./test/coverage ./node_modules/.bin/_mocha -- -R spec -t 15000 --recursive --exit",
     "projectsheet": "open $npm_package_district01_projectsheet"
   },
   "repository": {
@@ -46,6 +47,7 @@
     "nodemon": "1.11.0",
     "pretty-swag": "0.1.100",
     "proxyquire": "1.8.0",
+    "rimraf": "2.6.2",
     "supertest": "3.0.0",
     "swagger-jsdoc": "1.9.4"
   },
