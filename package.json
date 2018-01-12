@@ -1,16 +1,17 @@
 {
   "name": "nodejs-boilerplate",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0",
   "description": "Boilerplate for consistent project structures and maintenance.",
   "main": "index.js",
   "scripts": {
-    "start": "npm i && node index.js",
-    "nodemon": "./node_modules/.bin/nodemon",
-    "pm2": "./node_modules/.bin/pm2",
+    "start": "npm i && docker-compose up",
     "fixtures": "echo \"No command specified\" && exit 0",
     "lint": "npm run lint:eslint",
     "lint:eslint": "./node_modules/.bin/eslint config/** server/** test/**",
-    "test": "NODE_ENV=test ./node_modules/.bin/istanbul cover --dir ./test/coverage ./node_modules/.bin/_mocha -- -R spec -t 15000 --recursive --exit",
+    "lint:docker": "docker exec -it nodejs-boilerplate npm run lint",
+    "clean": "rimraf ./test/coverage",
+    "test": "npm run clean && NODE_ENV=test ./node_modules/.bin/istanbul cover --dir ./test/coverage ./node_modules/.bin/_mocha -- -R spec -t 15000 --recursive --exit",
+    "test:docker": "docker exec -it nodejs-boilerplate npm run test",
     "projectsheet": "open $npm_package_district01_projectsheet"
   },
   "repository": {
@@ -44,9 +45,9 @@
     "istanbul": "0.4.5",
     "mocha": "4.0.1",
     "nodemon": "1.11.0",
-    "pm2": "2.8.0",
     "pretty-swag": "0.1.100",
     "proxyquire": "1.8.0",
+    "rimraf": "2.6.2",
     "supertest": "3.0.0",
     "swagger-jsdoc": "1.9.4"
   },

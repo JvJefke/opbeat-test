@@ -1,0 +1,7 @@
+FROM node:carbon-alpine
+
+WORKDIR /app
+
+ENV TYPE=docker
+
+CMD [ "./node_modules/.bin/nodemon" ]
