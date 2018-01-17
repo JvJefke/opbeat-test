@@ -7,7 +7,7 @@
     "start": "npm i && docker-compose up",
     "fixtures": "echo \"No command specified\" && exit 0",
     "lint": "npm run lint:eslint",
-    "lint:eslint": "./node_modules/.bin/eslint config/** server/** test/**",
+    "lint:eslint": "./node_modules/.bin/eslint .",
     "lint:docker": "docker exec -it nodejs-boilerplate npm run lint",
     "clean": "rimraf ./test/coverage",
     "test": "npm run clean && NODE_ENV=test ./node_modules/.bin/istanbul cover --dir ./test/coverage ./node_modules/.bin/_mocha -- -R spec -t 15000 --recursive --exit",
