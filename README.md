@@ -54,25 +54,16 @@ This project implements several external services:
 ### NPM Scripts ###
 
 | Command       | Description                                 |
-| ------------- |-------------------------------------------- |
-| start         | Start the project.                          |
-| clean         | Remove the dist folder.                     |
+| ------------- | ------------------------------------------- |
+| start         | Install dependencies and start Docker.      |
+| clean         | Remove the coverage folder.                 |
 | projectsheet  | Open the projectsheet on Google Drive       |
-| nodemon       | Run the project with nodemon                |
-| watch         | Run all the watch tasks                     |
-| watch:css     | Watch for sass changes and build css        |
-| watch:images  | Watch for image changes and compile images  |
 | lint          | Run all the lint tasks                      |
 | lint:eslint   | Run eslint                                  |
-| lint:tslint   | Run tslint lint                             |
-| lint:sass     | Run sass lint                               |
-| serve         | Serve the current project on port 86666     |
-| build         | Run all the build tasks                     |
-| build:ts      | Build typescript                            |
-| build:css     | Build sass                                  |
-| build:images  | Compile images                              |
+| lint:docker   | Run eslint inside Docker container          |
+| test          | Run tests                                   |
+| test:docker   | Run tests inside Docker container           |
 | fixtures      | Seed the database                           |
-| ...           | ...                                         |
 
 All commands are executable by running `npm run [COMMAND-NAME]`.
 
