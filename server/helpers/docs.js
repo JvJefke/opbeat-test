@@ -15,7 +15,7 @@ const config = {
 	theme: {
 		default: "blue",
 		GET: "blue",
-		POST: "indigo",
+		POST: "green",
 		DELETE: "red",
 		PUT: "amber",
 		PATCH: "orange",
