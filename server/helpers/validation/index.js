@@ -9,6 +9,7 @@ const validator = (preset, onFailError, source) => {
 	if (validation.error) {
 		throw new Error(onFailError);
 	}
+
 	// Return value from validation, for casting etc
 	return validation.value;
 };

@@ -1,5 +1,5 @@
 const expect = require("chai").expect;
-const EnvironmentHelper = require(process.cwd() + "/server/helpers/environment");
+const EnvironmentHelper = require(`${process.cwd()}/server/helpers/environment`);
 
 describe("Environment helper", () => {
 	it("Should throw an error when NODE_ENV is not valid", (done) => {
