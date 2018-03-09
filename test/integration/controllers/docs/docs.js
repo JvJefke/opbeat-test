@@ -34,7 +34,7 @@ describe("Server docs route", () => {
 				require(process.cwd() + "/server/routes/docs")(app);
 			}
 
-			// Manipulate the rotuer stack
+			// Manipulate the router stack
 			app._router.stack.forEach((route, index) => {
 				if (route && route.hasOwnProperty("route") && route.route && route.route.hasOwnProperty("path")) {
 					// Check for the fallback route
