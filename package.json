@@ -38,10 +38,10 @@
     "session-file-store": "1.0.0"
   },
   "devDependencies": {
-    "@district01/eslint-config": "1.0.0",
+    "@studiohyperdrive/eslint-config": "3.0.0",
     "chai": "4.0.2",
-    "eslint": "3.19.0",
-    "eslint-plugin-chai-friendly": "0.3.6",
+    "eslint": "4.18.2",
+    "eslint-plugin-chai-friendly": "0.4.1",
     "istanbul": "0.4.5",
     "mocha": "4.0.1",
     "nodemon": "1.11.0",
