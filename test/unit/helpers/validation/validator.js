@@ -1,7 +1,7 @@
 const expect = require("chai").expect;
 const proxyquire = require("proxyquire");
 const Joi = require("joi");
-const ValidationHelper = proxyquire(process.cwd() + "/server/helpers/validation", {
+const ValidationHelper = proxyquire(`${process.cwd()}/server/helpers/validation`, {
 	"./presets": {
 		check: {
 			schema: Joi.object().keys({

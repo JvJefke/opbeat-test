@@ -1,5 +1,5 @@
 const expect = require("chai").expect;
-const DocsHelper = require(process.cwd() + "/server/helpers/docs");
+const DocsHelper = require(`${process.cwd()}/server/helpers/docs`);
 
 describe("Docs helper", () => {
 	it("Should return an error because no Swagger JSON was given", (done) => {

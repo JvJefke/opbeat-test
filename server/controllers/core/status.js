@@ -1,4 +1,4 @@
-const packageJson = require(process.cwd() + "/package.json");
+const packageJson = require(`${process.cwd()}/package.json`);
 
 module.exports = (req, res) => {
 	res.status(200).json({

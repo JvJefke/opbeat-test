@@ -1,12 +1,12 @@
-let config = require(process.cwd() + "/config");
+const config = require(`${process.cwd()  }/config`);
 const expect = require("chai").expect;
 const supertest = require("supertest");
 
 // API setup
-const api = supertest("http://localhost:" + config.server.port + "/");
+const api = supertest(`http://localhost:${  config.server.port  }/`);
 
 // Start the application
-let app = require(process.cwd() + "/server/app.js");
+const app = require(`${process.cwd()  }/server/app.js`);
 
 describe("Server docs route", () => {
 	describe("Disabled config", () => {
@@ -25,13 +25,13 @@ describe("Server docs route", () => {
 	describe("Enabled config", () => {
 		before((done) => {
 			// Check if the docs route was required
-			if (require.cache[process.cwd() + "/server/routes/docs.js"]) {
+			if (require.cache[`${process.cwd()  }/server/routes/docs.js`]) {
 				// Delete the docs route
-				delete require.cache[process.cwd() + "/server/routes/docs.js"];
+				delete require.cache[`${process.cwd()  }/server/routes/docs.js`];
 				// Set the docs flag to true
 				config.state.docs = true;
 				// Require docs routes again, now WITH the routes
-				require(process.cwd() + "/server/routes/docs")(app);
+				require(`${process.cwd()  }/server/routes/docs`)(app);
 			}
 
 			// Manipulate the router stack

@@ -6,6 +6,7 @@ const errorHandler = (err) => {
 	if (err.name && err.name !== "Error") {
 		statusCode = 400;
 		msg = `${err.name} occured. See the stack for more information.`;
+
 		return { statusCode, msg, stack: err.stack.split(/\r?\n/) };
 	}
 
