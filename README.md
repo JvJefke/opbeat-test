@@ -120,23 +120,23 @@ The production environment is built manually from the `master`-branch. This envi
 
 ## Project Context ##
 
-This project is a District01 team effort.
+This project is a Studio Hyperdrive team effort.
 
 ### Details ###
 
-* **Client**: District01
+* **Client**: Studio Hyperdrive
 * **Start**: 12/10/2017
-* **Jira Board**: http://www.district01.be
-* **Drive Folder**: http://www.district01.be
-* **Project Sheet**: http://www.district01.be
+* **Jira Board**: https://www.studiohyperdrive.be
+* **Drive Folder**: https://www.studiohyperdrive.be
+* **Project Sheet**: https://www.studiohyperdrive.be
 
 ### Team ###
 
 List the team that has worked on this project, including the duration e.g.:
 
-* [Developer 1 - District01](developer-1@district01.be)
+* [Developer 1 - Studio Hyperdrive](developer-1@studiohyperdrive.be)
     * **Function**: Lead Front-End Dev
     * **Period**: October 2017 -> December 2017
-* [Developer 2 - District01](developer-2@district01.be)
+* [Developer 2 - Studio Hyperdrive](developer-2@studiohyperdrive.be)
     * **Function**: Lead Technical Dev
     * **Period**: October 2017 -> December 2017
