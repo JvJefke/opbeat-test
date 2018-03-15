@@ -1,6 +1,6 @@
 const Joi = require("joi");
 const curry = require("lodash.curry");
-const ValidationError = require("../validationError")
+const ValidationError = require("../validationError");
 
 const presets = require("./presets");
 
