@@ -1,7 +1,7 @@
 const expect = require("chai").expect;
 
 const errorHandler = require(`${process.cwd()}/server/helpers/errorHandler`);
-const ValidationError = require(`${process.cwd()}/server/helpers/validationError`)
+const ValidationError = require(`${process.cwd()}/server/helpers/validationError`);
 
 describe("Error handler helper", () => {
 	it("Should return an error with stack", (done) => {
