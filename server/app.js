@@ -2,7 +2,7 @@
 require("./helpers/environment")(process.env);
 
 const app = require("express")();
-const config = require(process.cwd() + "/config");
+const config = require(`${process.cwd()}/config`);
 
 // Init global middleware
 require("./middleware/global")(app);

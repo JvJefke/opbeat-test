@@ -1,6 +1,6 @@
 const expect = require("chai").expect;
 
-const errorHandler = require(process.cwd() + "/server/middleware/errorHandler");
+const errorHandler = require(`${process.cwd()}/server/middleware/errorHandler`);
 
 describe("Error handler middleware", () => {
 	it("Should skip if there is no error", (done) => {
@@ -18,6 +18,7 @@ describe("Error handler middleware", () => {
 		const res = {
 			status: (statusCode) => {
 				expect(statusCode).to.be.equal(500);
+
 				return {
 					json: (body) => {
 						expect(body).to.be.an("object");
@@ -27,7 +28,7 @@ describe("Error handler middleware", () => {
 				};
 			},
 		};
-		const next = require(process.cwd() + "/server/middleware/errorHandler");
+		const next = require(`${process.cwd()}/server/middleware/errorHandler`);
 
 		errorHandler(err, req, res, next);
 	});
@@ -39,6 +40,7 @@ describe("Error handler middleware", () => {
 			headersSent: true,
 			status: (statusCode) => {
 				expect(statusCode).to.be.equal(500);
+
 				return {
 					json: (body) => {
 						expect(body).to.be.an("object");
@@ -48,9 +50,9 @@ describe("Error handler middleware", () => {
 				};
 			},
 		};
-		const next = require(process.cwd() + "/server/middleware/errorHandler");
+		const next = require(`${process.cwd()}/server/middleware/errorHandler`);
 
-		let result = errorHandler(err, req, res, next);
+		const result = errorHandler(err, req, res, next);
 
 		expect(result).to.be.undefined;
 

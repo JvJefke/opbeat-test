@@ -1,12 +1,12 @@
-const config = require(process.cwd() + "/config");
+const config = require(`${process.cwd()}/config`);
 const expect = require("chai").expect;
 const supertest = require("supertest");
 
 // API setup
-const api = supertest("http://localhost:" + config.server.port + "/");
+const api = supertest(`http://localhost:${config.server.port}/`);
 
 // Start the application
-require(process.cwd() + "/server/app.js");
+require(`${process.cwd()}/server/app.js`);
 
 describe("Server fallback route", () => {
 	it("Should return the fallback route message", (done) => {

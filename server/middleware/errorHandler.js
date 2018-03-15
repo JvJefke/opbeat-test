@@ -17,7 +17,7 @@ const errorHandler = (err, req, res, next) => {
 		return;
 	}
 
-	let { statusCode, msg, stack } = ErrorHelper(err);
+	const { statusCode, msg, stack } = ErrorHelper(err);
 
 	// Return response
 	res.status(statusCode).json({
