@@ -5,4 +5,4 @@ module.exports = function ValidationError(message, validation = null) {
 	this.validation = validation;
 };
 
-require('util').inherits(module.exports, Error);
+require("util").inherits(module.exports, Error);
