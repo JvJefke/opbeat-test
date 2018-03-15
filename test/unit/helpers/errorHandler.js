@@ -1,6 +1,7 @@
 const expect = require("chai").expect;
 
 const errorHandler = require(`${process.cwd()}/server/helpers/errorHandler`);
+const ValidationError = require(`${process.cwd()}/server/helpers/validationError`)
 
 describe("Error handler helper", () => {
 	it("Should return an error with stack", (done) => {
@@ -22,6 +23,33 @@ describe("Error handler helper", () => {
 		expect(result).to.be.an("object");
 		expect(result).to.have.property("statusCode", 400);
 		expect(result).to.have.property("msg", "Unable to create the docs.");
+
+		done();
+	});
+
+	it("Should return the error when the object validation failed with errors", (done) => {
+		const err = new ValidationError("OBJECT_VALIDATION_FAILED", {
+			details: [{
+				message: "Some error.",
+			}],
+		});
+		const result = errorHandler(err);
+
+		expect(result).to.be.an("object");
+		expect(result).to.have.property("statusCode", 400);
+		expect(result).to.have.property("msg").to.be.an("array").to.have.lengthOf(1);
+		expect(result.msg[0]).to.have.property("err", "Some error.");
+
+		done();
+	});
+
+	it("Should return the error when the object validation failed without errors", (done) => {
+		const err = new ValidationError("OBJECT_VALIDATION_FAILED");
+		const result = errorHandler(err);
+
+		expect(result).to.be.an("object");
+		expect(result).to.have.property("statusCode", 400);
+		expect(result).to.have.property("msg").to.be.an("array").to.have.lengthOf(0);
 
 		done();
 	});
