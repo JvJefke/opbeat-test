@@ -5,22 +5,22 @@
   "main": "index.js",
   "scripts": {
     "start": "npm i",
-    "projectsheet": "open $npm_package_district01_projectsheet"
+    "projectsheet": "open $npm_package_studiohyperdrive_projectsheet"
   },
   "repository": {
     "type": "git",
     "url": "git+https://bitbucket.org/district01/boilerplate.git"
   },
-  "author": "Fabian Meul <fabian.meul@district01.be>",
+  "author": "Fabian Meul <fabian.meul@studiohyperdrive.be>",
   "contributors": [
-    "Fabian Meul <fabian.meul@district01.be>",
-    "Thomas Bormans <thomas.bormans@district01.be>"
+    "Fabian Meul <fabian.meul@studiohyperdrive.be>",
+    "Thomas Bormans <thomas.bormans@studiohyperdrive.be>"
   ],
   "license": "ISC",
   "homepage": "https://bitbucket.org/district01/boilerplate#readme",
   "dependencies": {},
   "devDependencies": {},
-  "district01": {
+  "studiohyperdrive": {
     "projectsheet": "https://bitbucket.org/district01/boilerplate/overview"
   }
 }
