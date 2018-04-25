@@ -20,4 +20,5 @@ module.exports = (app) => {
 	 *              type: string
 	 */
 	app.route("/status").get(CoreController.status);
+	app.route("/status-error").get(CoreController.statusError);
 };

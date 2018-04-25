@@ -36,6 +36,7 @@
     "lodash.curry": "4.1.1",
     "lodash.get": "4.4.2",
     "lodash.merge": "4.6.0",
+    "opbeat": "4.17.0",
     "session-file-store": "1.0.0"
   },
   "devDependencies": {
